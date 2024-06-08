@@ -25,11 +25,35 @@ target_dir:
 
 # 個々のCファイルのコンパイルルール
 %: %.c
+	echo $<
 	$(CC) $(CFLAGS) -o $@ $<
 
 # 個々のC++ファイルのコンパイルルール
 %: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
+
+# ディレクトリの指定
+DIR_PATH =
+
+# ターゲットの実行ファイル名
+TARGET = $(notdir $(DIR_PATH))
+
+# ターゲットディレクトリ内のソースファイル
+SRC = $(wildcard $(DIR_PATH)/*.c)
+
+# ターゲットディレクトリ内のオブジェクトファイル
+OBJ = $(patsubst %.c,%.o,$(SRC))
+
+# 指定されたディレクトリのファイルをコンパイル
+target: $(DIR_PATH)/$(TARGET)
+
+# 実行ファイルを生成
+$(DIR_PATH)/$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
+
+# .c から .o を生成
+$(DIR_PATH)/%.o: $(DIR_PATH)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # ルール: clean - 生成されたファイルを削除
 clean:
