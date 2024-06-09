@@ -4,6 +4,8 @@ int main()
 {
   int num;
   printf("数値を入力: ");
+
+  // MEMO:
   // 入力した数値をnumに格納
   // 格納する際は[&]をつける。(アンバサント)
   scanf("%d", &num);
