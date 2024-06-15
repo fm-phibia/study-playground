@@ -2,7 +2,7 @@ name: Build hogehoge
 on:
   push:
     branches:
-      - master
+      - test
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
         id: builder
         run: |
           cd ./spring/demo
-          ./gradle bootWar
+          ./gradlew bootWar
           TARGET_WAR=$(ls ./build/libs/demo-0.0.1-SNAPSHOT.war)
           echo "targetwar=${TARGET_WAR}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
