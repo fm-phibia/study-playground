@@ -27,5 +27,5 @@ jobs:
           echo "targetwar=${TARGET_WAR}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         with:
-          name: targetwar
-          path: ${{ steps.builder.outputs.targetwar }}
+          name: target-war
+          path: ./spring/demo/build/libs/demo-0.0.1-SNAPSHOT.war
