@@ -21,6 +21,7 @@ jobs:
         run: |
           cd ./spring/demo
           ./gradlew bootWar
+          chmod +x ./build/libs/demo-0.0.1-SNAPSHOT.war
           TARGET_WAR=$(./build/libs/demo-0.0.1-SNAPSHOT.war)
           echo $TARGET_WAR
           echo "targetwar=${TARGET_WAR}" >> "$GITHUB_OUTPUT"
