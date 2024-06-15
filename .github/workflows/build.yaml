@@ -21,6 +21,7 @@ jobs:
         run: |
           cd ./spring/demo
           ./gradlew bootWar
+          ls ./build/libs
           TARGET_WAR=$(ls ./build/libs/demo-0.0.1-SNAPSHOT.war)
           echo "targetwar=${TARGET_WAR}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
