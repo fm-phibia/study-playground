@@ -1,0 +1,18 @@
+{
+	"name": "Go",
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"streetsidesoftware.code-spell-checker",
+				"eamodio.gitlens",
+				"seatonjiang.gitmoji-vscode",
+				"oderwat.indent-rainbow",
+				"shardulm94.trailing-spaces"
+			]
+		}
+	}
+}
