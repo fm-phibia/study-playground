@@ -1,0 +1,38 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    // JUnit Jupiter (JUnit 5)
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // JUnit Platform Commons
+    testImplementation 'org.junit.platform:junit-platform-commons:1.8.1'
+    testImplementation 'org.junit.platform:junit-platform-engine:1.8.1'
+    
+    // JUnit Platform Launcher (for launching tests)
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.8.1'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.mockito', module: 'mockito-core'
+    }
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-inline:3.12.4'
+}
+test {
+    useJUnitPlatform() // JUnit 5を使用する設定
+}
+// tasks.named('test') {
+//     useJUnitPlatform()
+// }
