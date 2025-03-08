@@ -1,0 +1,9 @@
+FROM node:23-slim
+
+ENV TZ Asia/Tokyo
+
+WORKDIR /serverless
+
+RUN apt-get update \
+    && apt-get install -y \
+    git

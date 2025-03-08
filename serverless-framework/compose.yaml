@@ -1,0 +1,16 @@
+services:
+  serverless:
+    container_name: serverless
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+      - 3002:3002
+    working_dir: "/serverless"
+    volumes:
+      - ./:/serverless:cached
+      - nuxt_node_modules:/serverless/node_modules
+    tty: true
+volumes:
+  nuxt_node_modules:

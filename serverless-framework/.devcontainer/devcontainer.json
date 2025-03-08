@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "ServerlessDevContainer",
+	"workspaceFolder": "/serverless",
+	"service": "serverless",
+	"dockerComposeFile": [
+		"../compose.yaml"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"github.copilot-labs",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"dotenv.dotenv-vscode",
+				"eamodio.gitlens",
+				"editorconfig.editorconfig",
+				"oderwat.indent-rainbow",
+				"seatonjiang.gitmoji-vscode",
+				"shardulm94.trailing-spaces",
+				"streetsidesoftware.code-spell-checker",
+				"stylelint.vscode-stylelint",
+				"vscode-icons-team.vscode-icons",
+				"vue.volar"
+			]
+		}
+	},
+	"initializeCommand": "sh .devcontainer/initialize.sh",
+	"postCreateCommand": "sh .devcontainer/create.sh",
+	"postAttachCommand": "sh .devcontainer/attach.sh"
+}
